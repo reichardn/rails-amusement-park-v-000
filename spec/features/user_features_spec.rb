@@ -147,6 +147,7 @@ describe 'Feature Test: Go on a Ride', :type => :feature do
     expect(page).to_not have_content("delete")
   end
 
+
   it "has a button from the attraction show page to go on the ride" do
     click_link('See attractions')
     click_link("Go on #{@ferriswheel.name}")
@@ -160,6 +161,8 @@ describe 'Feature Test: Go on a Ride', :type => :feature do
     click_button("Go on this ride")
     expect(current_path).to eq("/users/1")
   end
+
+  #----------------
 
   it "clicking on 'Go on ride' updates the users ticket number" do
     click_link('See attractions')
@@ -198,7 +201,7 @@ describe 'Feature Test: Go on a Ride', :type => :feature do
     click_link('See attractions')
     click_link("Go on #{@ferriswheel.name}")
     click_button("Go on this ride")
-    expect(page).to have_content("You do not have enough tickets the #{@ferriswheel.name}")
+    expect(page).to have_content("You do not have enough tickets to ride the #{@ferriswheel.name}")
     expect(page).to have_content("Tickets: 1")
   end
 
@@ -209,7 +212,7 @@ describe 'Feature Test: Go on a Ride', :type => :feature do
     click_link("Go on #{@rollercoaster.name}")
     click_button("Go on this ride")
     expect(page).to have_content("You are not tall enough to ride the #{@rollercoaster.name}")
-    expect(page).to have_content("You do not have enough tickets the #{@rollercoaster.name}")
+    expect(page).to have_content("You do not have enough tickets to ride the #{@rollercoaster.name}")
     expect(page).to have_content("Tickets: 1")
   end
 end

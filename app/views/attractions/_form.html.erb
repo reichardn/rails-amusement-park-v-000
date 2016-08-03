@@ -1,0 +1,16 @@
+
+
+<%= form_for attraction do |f| %>
+
+  Name:<%= f.text_field :name %><br />
+
+  Min height:<%= f.number_field :min_height %><br />
+
+  Happiness rating:<%= f.number_field :happiness_rating %><br />
+
+  Nausea rating:<%= f.number_field :nausea_rating %><br />
+
+  Tickets:<%= f.number_field :tickets %><br />
+
+  <%= f.submit %>
+<% end %>

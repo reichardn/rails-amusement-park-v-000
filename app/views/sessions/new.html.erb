@@ -1,0 +1,7 @@
+<%= form_tag(sessions_path) do %>
+
+  <%= collection_select(:user, :id, @users, :id, :name) %>
+
+  <div><%= submit_tag 'Sign In' %></div>
+
+<% end %>

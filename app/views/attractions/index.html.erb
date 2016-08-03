@@ -1,0 +1,20 @@
+
+<% if @user.admin
+      word = "Show"
+   else
+      word = "Go on"
+   end %> 
+
+<ul>
+  <% @attractions.each do |a| %>
+    <li><%= link_to "#{word} #{a.name}", attraction_path(a) %></li>
+  <% end %>
+</ul>
+
+
+<br>
+<% if @user.admin %>
+
+  <h2><%= link_to "New Attraction", new_attraction_path %></h2>
+
+<% end %>

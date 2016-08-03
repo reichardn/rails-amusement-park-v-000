@@ -1,0 +1,18 @@
+
+
+  Name: <%= @user.name %><br />
+
+  Height: <%= @user.height %><br />
+  Mood: <%= @user.mood %><br />
+  Tickets: <%= @user.tickets %><br />
+
+  <% if @user.admin %>
+    <h2>ADMIN</h2>
+  <% end %>
+
+<%= link_to("Log Out", "/logout" , method: :post) %>
+
+<%= link_to "See attractions", attractions_path %>
+
+
+
